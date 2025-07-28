@@ -11,6 +11,9 @@ pip install -r requirements.txt
 
 # ffmpeg on Debian/Ubuntu
 apt update && sudo apt install ffmpeg
+
+# OpenGL on Debian/Ubuntu
+apt install -y libgl1-mesa-glx libglib2.0-0
 ```
 
 # 文件转换
@@ -20,7 +23,7 @@ apt update && sudo apt install ffmpeg
 evp --similarity 0.6 --pdfname note.pdf  ./   /path/to/sample.mp4
 # 当前目录下就会有个note.pdf
 
-# 提取视频中的音频，将音频转成文字。--language制定视频语音使用哪国的语言
+# 提取视频中的音频，将音频转成文字。--language指定视频语音使用了哪国的语言
 whisper /path/to/sample.mp4   --model turbo  --language Chinese
 # 初次转换时间会很长，会自动通过外网下载turbo模型（1.2GB），保存到本地~/.cache/whisper中
 # whisper --help 查看支持哪些语言
